@@ -1,4 +1,4 @@
 package org.accentreductionapps.polishyouraccent.exercises;
 
-public class Exercise2HumanInterest implements Exercises {
+public class Exercise2HumanInterest extends Exercises {
 }

@@ -1,16 +1,9 @@
 package org.accentreductionapps.polishyouraccent.exercises;
 
-import org.accentreductionapps.polishyouraccent.model.Word;
-
 import java.util.List;
 
-public class Exercise4Test implements Exercises {
-    private List<Question> listOfQuestions;
-    private Integer testResult;
+public class Exercise4Test extends Exercises {
 
 
-    private class Question {
-        private Word correctAnswer;
-        private List<Word> wordsToChooseFrom;
-    }
+
 }
