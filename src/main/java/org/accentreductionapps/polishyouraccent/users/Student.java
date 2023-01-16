@@ -1,6 +1,6 @@
 package org.accentreductionapps.polishyouraccent.users;
 
-import org.accentreductionapps.polishyouraccent.exercises.Exercises;
+import org.accentreductionapps.polishyouraccent.model.exercises.Exercises;
 import org.accentreductionapps.polishyouraccent.model.Lesson;
 
 import java.util.List;

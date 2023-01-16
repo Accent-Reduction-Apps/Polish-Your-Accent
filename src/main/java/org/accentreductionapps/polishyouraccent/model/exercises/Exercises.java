@@ -1,6 +1,4 @@
-package org.accentreductionapps.polishyouraccent.exercises;
-
-import org.accentreductionapps.polishyouraccent.model.Word;
+package org.accentreductionapps.polishyouraccent.model.exercises;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -15,7 +13,7 @@ public abstract class Exercises {
 
 
 
-    List<Question> listOfQuestions = null;
+    List<Exercise4Test.Question> listOfQuestions = null;
 
 
 

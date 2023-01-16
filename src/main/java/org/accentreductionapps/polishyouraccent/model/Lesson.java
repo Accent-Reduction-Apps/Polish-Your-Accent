@@ -1,6 +1,6 @@
 package org.accentreductionapps.polishyouraccent.model;
 
-import org.accentreductionapps.polishyouraccent.exercises.Exercises;
+import org.accentreductionapps.polishyouraccent.model.exercises.Exercises;
 
 import java.time.LocalDateTime;
 import java.util.List;
