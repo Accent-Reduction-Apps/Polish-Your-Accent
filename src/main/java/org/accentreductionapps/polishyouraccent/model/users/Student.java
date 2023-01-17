@@ -1,10 +1,12 @@
-package org.accentreductionapps.polishyouraccent.users;
+package org.accentreductionapps.polishyouraccent.model.users;
 
 import org.accentreductionapps.polishyouraccent.model.exercises.Exercises;
 import org.accentreductionapps.polishyouraccent.model.Lesson;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import java.util.List;
 
+@Entity
 public class Student extends User {
     private int age;
     private String gender;

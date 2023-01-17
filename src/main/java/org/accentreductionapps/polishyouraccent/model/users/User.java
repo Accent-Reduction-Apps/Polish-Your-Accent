@@ -1,4 +1,4 @@
-package org.accentreductionapps.polishyouraccent.users;
+package org.accentreductionapps.polishyouraccent.model.users;
 
 public abstract class User {
 
