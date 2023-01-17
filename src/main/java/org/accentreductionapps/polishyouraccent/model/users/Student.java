@@ -1,11 +1,7 @@
 package org.accentreductionapps.polishyouraccent.model.users;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import org.accentreductionapps.polishyouraccent.model.exercises.Exercises;
 import org.accentreductionapps.polishyouraccent.model.Lesson;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.accentreductionapps.polishyouraccent.model.exercises.Exercises;
 
 import java.util.List;
 
@@ -27,7 +23,6 @@ public class Student extends User {
     public Student(String emailAddress, String password) {
         super(emailAddress, password);
     }
-
 
 
 }

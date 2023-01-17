@@ -1,9 +1,5 @@
 package org.accentreductionapps.polishyouraccent.model.users;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-
-
 public abstract class User {
 
     private final String emailAddress;
