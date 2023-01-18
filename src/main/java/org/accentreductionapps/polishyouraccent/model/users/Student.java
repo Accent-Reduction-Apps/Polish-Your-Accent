@@ -3,9 +3,10 @@ package org.accentreductionapps.polishyouraccent.model.users;
 import lombok.Getter;
 import lombok.Setter;
 import org.accentreductionapps.polishyouraccent.model.LessonsHistory;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
+@Component
 @Getter
 @Setter
 public class Student extends User {
