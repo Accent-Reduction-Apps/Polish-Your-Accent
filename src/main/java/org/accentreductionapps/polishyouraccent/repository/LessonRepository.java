@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@org.springframework.stereotype.Repository
 public class LessonRepository extends dbMockupMap<Lesson> implements Repository<Lesson> {
 
     private final Map<Long, Lesson> lessons = new HashMap<>();
@@ -32,7 +33,7 @@ public class LessonRepository extends dbMockupMap<Lesson> implements Repository<
 
     @Override
     public void updateModel(Long id, Lesson model) {
-        lessons.put(id,model);
+        lessons.put(id, model);
     }
 
 
