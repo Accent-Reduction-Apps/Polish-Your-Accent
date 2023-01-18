@@ -32,7 +32,7 @@ public class LessonRepository extends dbMockupMap<Lesson> implements Repository<
 
     @Override
     public void updateModel(Long id, Lesson model) {
-
+        lessons.put(id,model);
     }
 
 
