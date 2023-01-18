@@ -1,7 +1,7 @@
 package org.accentreductionapps.polishyouraccent.controller;
 
 import org.accentreductionapps.polishyouraccent.model.Lesson;
-import org.accentreductionapps.polishyouraccent.model.exercises.Exercises;
+import org.accentreductionapps.polishyouraccent.model.exercises.Exercise;
 import org.accentreductionapps.polishyouraccent.model.users.User;
 import org.accentreductionapps.polishyouraccent.service.LessonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class LessonEditController {
 
     @GetMapping(value = "/lesson/create_lesson")
     public void createLesson() {
-        // tempalte for creating a new lesson
+        // template for creating a new lesson
     }
 
 
@@ -38,7 +38,7 @@ public class LessonEditController {
             String lessonName,
             String lessonCategory,
             LocalDateTime dateTimeWhenLessonWasCreated,
-            List<Exercises> exercisesList) {
+            List<Exercise> exercisesList) {
         return lessonService.createLesson(author, lessonName, lessonCategory, dateTimeWhenLessonWasCreated, exercisesList);
     }
 

@@ -1,7 +1,7 @@
 package org.accentreductionapps.polishyouraccent.model.users;
 
 import org.accentreductionapps.polishyouraccent.model.Lesson;
-import org.accentreductionapps.polishyouraccent.model.exercises.Exercises;
+import org.accentreductionapps.polishyouraccent.model.exercises.Exercise;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class Student extends User {
 
 
     private List<Lesson> listOfLessonsDone;
-    private List<Exercises> listOfTestsDone;
+    private List<Exercise> listOfTestsDone;
     private Long id;
 
 
