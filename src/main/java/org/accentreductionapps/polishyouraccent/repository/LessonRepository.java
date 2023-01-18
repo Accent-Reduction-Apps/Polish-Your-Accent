@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class LessonRepository extends dbMockupMap<Lesson> implements Repository<Lesson> {
 
-    private Map<Long, Lesson> lessons = new HashMap<>();
+    private final Map<Long, Lesson> lessons = new HashMap<>();
 
     @Override
     public void addModel(Lesson model) {
