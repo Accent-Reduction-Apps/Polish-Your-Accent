@@ -73,4 +73,5 @@ public class Lesson {
     public void setExercisesList(List<Exercises> exercisesList) {
         this.exercisesList = exercisesList;
     }
+
 }
