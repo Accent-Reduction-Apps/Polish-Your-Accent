@@ -4,16 +4,16 @@ import org.accentreductionapps.polishyouraccent.model.Lesson;
 
 import java.util.List;
 
-public interface RepositoryInterface<T> {
+public interface Repository<T> {
 
-    T addModel(T model);
+    void addModel(T model);
 
-    T deleteModel(Long id);
+    void deleteModel(Long id);
 
     List<Lesson> getAllModels();
 
     T getModelById(Long id);
 
-    T updateModel(Long id, T model);
+    void updateModel(Long id, T model);
 
 }
