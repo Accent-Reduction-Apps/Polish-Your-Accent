@@ -1,31 +1,32 @@
 package org.accentreductionapps.polishyouraccent.repository;
 
-public class Repository implements RepositoryInterface{
+import java.util.List;
+
+public class Repository <T>implements RepositoryInterface<T>{
 
     DbMockup dataBase = new DbMockup();
 
     @Override
-    public Object addModel(Object model) {
+    public void addModel(T model) {
+    }
+
+    @Override
+    public T deleteModel(Long id) {
         return null;
     }
 
     @Override
-    public Object deleteModel(Long id) {
+    public List<T> getAllModels() {
         return null;
     }
 
     @Override
-    public Object getAllModels(Object param) {
+    public T getModelById(Long id) {
         return null;
     }
 
     @Override
-    public Object getModelById(Long id) {
-        return null;
-    }
-
-    @Override
-    public Object updateModel(Long id, Object model) {
+    public T updateModel(Long id, T model) {
         return null;
     }
 }

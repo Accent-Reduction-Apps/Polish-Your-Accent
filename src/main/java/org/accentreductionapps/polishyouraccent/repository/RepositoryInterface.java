@@ -1,12 +1,14 @@
 package org.accentreductionapps.polishyouraccent.repository;
 
+import java.util.List;
+
 public interface RepositoryInterface<T> {
 
-    T addModel(T model);
+    void addModel(T model);
 
     T deleteModel(Long id);
 
-    T getAllModels(T param);
+    List<T> getAllModels();
 
     T getModelById(Long id);
 
