@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class Lesson {
+    private Long id;
     private User author;
     private String lessonName;
     private String lessonCategory;

@@ -12,9 +12,8 @@ public abstract class Exercises {
     LocalDateTime dateTimeWhenExerciseWasCreated = null;
     int testResult = 0;
     String videoFileName;
-
-
     List<Exercise4Test.Question> listOfQuestions = null;
+    private Long id;
 
 
 }
