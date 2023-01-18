@@ -10,7 +10,7 @@ public interface Repository<T> {
 
     void deleteModel(Long id);
 
-    List<Lesson> getAllModels();
+    List<T> getAllModels();
 
     T getModelById(Long id);
 
