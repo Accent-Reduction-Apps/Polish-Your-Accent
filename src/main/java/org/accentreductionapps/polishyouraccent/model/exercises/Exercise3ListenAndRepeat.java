@@ -1,5 +1,5 @@
-package org.accentreductionapps.polishyouraccent.model.exercises;
-
-
-public class Exercise3ListenAndRepeat extends Exercises {
-}
+//package org.accentreductionapps.polishyouraccent.model.exercises;
+//
+//
+//public class Exercise3ListenAndRepeat extends Exercise {
+//}
