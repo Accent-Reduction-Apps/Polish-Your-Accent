@@ -11,6 +11,8 @@ markup cheatSheet https://github.com/tchapi/markdown-cheatsheet/blob/master/READ
 * maven-project/src/assembly – assembly configuration for packaging binaries
 
 # src/test
+
 * src/test/java – Java source code for tests
 * src/test/resources – configuration files and others used by tests
-* src/test/filters – contains files that inject values into configuration properties in the resources folder during the test phase
+* src/test/filters – contains files that inject values into configuration properties in the resources folder during the
+  test phase
