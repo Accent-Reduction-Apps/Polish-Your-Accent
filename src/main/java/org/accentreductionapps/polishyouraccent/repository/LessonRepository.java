@@ -6,32 +6,34 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LessonRepository implements RepositoryInterface<Lesson> {
+public class LessonRepository extends dbMockupMap<Lesson> implements Repository<Lesson> {
 
-    Map<Long,Lesson> lessons = new HashMap<>();
+    private Map<Long, Lesson> lessons = new HashMap<>();
 
     @Override
-    public Lesson addModel(Lesson model) {
-        return null;
+    public void addModel(Lesson model) {
+        lessons.put(findId(lessons), model);
     }
 
     @Override
-    public Lesson deleteModel(Long id) {
-        return null;
+    public void deleteModel(Long id) {
+        lessons.remove(id);
     }
 
     @Override
     public List<Lesson> getAllModels() {
-        return null;
+        return (List<Lesson>) lessons.values();
     }
 
     @Override
     public Lesson getModelById(Long id) {
-        return null;
+        return lessons.get(id);
     }
 
     @Override
-    public Lesson updateModel(Long id, Lesson model) {
-        return null;
+    public void updateModel(Long id, Lesson model) {
+
     }
+
+
 }
