@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface Repository<T> {
 
-    Long addModel(T model);
+    void addModel(T model);
 
     void deleteModel(Long id);
 

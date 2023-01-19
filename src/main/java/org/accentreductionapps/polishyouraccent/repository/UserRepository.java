@@ -14,10 +14,10 @@ public class UserRepository extends dbMockupMap<User> implements Repository<User
     private final Map<Long, User> users = new HashMap<>();
 
     @Override
-    public Long addModel(User model) {
+    public void addModel(User model) {
         Long id = findId(users);
         users.put(id, model);
-        return id;
+
     }
 
     @Override
