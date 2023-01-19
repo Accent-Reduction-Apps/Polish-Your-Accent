@@ -1,8 +1,7 @@
 package org.accentreductionapps.polishyouraccent.service;
 
 import org.accentreductionapps.polishyouraccent.model.Lesson;
-import org.accentreductionapps.polishyouraccent.model.exercises.Exercises;
-import org.accentreductionapps.polishyouraccent.model.users.Student;
+import org.accentreductionapps.polishyouraccent.model.exercises.Exercise;
 import org.accentreductionapps.polishyouraccent.model.users.User;
 import org.accentreductionapps.polishyouraccent.repository.Repository;
 import org.springframework.stereotype.Service;
@@ -23,7 +22,7 @@ public class LessonService {
                                String lessonName,
                                String lessonCategory,
                                LocalDateTime dateTimeWhenLessonWasCreated,
-                               List<Exercises> exercisesList) {
+                               List<Exercise> exercisesList) {
         Lesson newLesson = new Lesson(author, lessonName, lessonCategory, dateTimeWhenLessonWasCreated, exercisesList);
         lessonRepository.addModel(newLesson);
         return newLesson;

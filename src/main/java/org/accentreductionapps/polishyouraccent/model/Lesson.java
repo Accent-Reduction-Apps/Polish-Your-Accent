@@ -1,6 +1,6 @@
 package org.accentreductionapps.polishyouraccent.model;
 
-import org.accentreductionapps.polishyouraccent.model.exercises.Exercises;
+import org.accentreductionapps.polishyouraccent.model.exercises.Exercise;
 import org.accentreductionapps.polishyouraccent.model.users.User;
 
 import java.time.LocalDateTime;
@@ -12,13 +12,13 @@ public class Lesson {
     private String lessonName;
     private String lessonCategory;
     private LocalDateTime dateTimeWhenLessonWasCreated;
-    private List<Exercises> exercisesList;
+    private List<Exercise> exercisesList;
 
     public Lesson(User author,
                   String lessonName,
                   String lessonCategory,
                   LocalDateTime dateTimeWhenLessonWasCreated,
-                  List<Exercises> exercisesList) {
+                  List<Exercise> exercisesList) {
         this.author = author;
         this.lessonName = lessonName;
         this.lessonCategory = lessonCategory;
@@ -66,11 +66,11 @@ public class Lesson {
         this.dateTimeWhenLessonWasCreated = dateTimeWhenLessonWasCreated;
     }
 
-    public List<Exercises> getExercisesList() {
+    public List<Exercise> getExercisesList() {
         return exercisesList;
     }
 
-    public void setExercisesList(List<Exercises> exercisesList) {
+    public void setExercisesList(List<Exercise> exercisesList) {
         this.exercisesList = exercisesList;
     }
 
