@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class LessonService {
 
-    private Repository lessonRepository;
+    private final Repository<Lesson> lessonRepository;
 
     public LessonService(LessonRepository lessonRepository) {
         this.lessonRepository = lessonRepository;
@@ -30,7 +30,7 @@ public class LessonService {
     }
 
     public Lesson getLessonById(Long id) {
-        return (Lesson) lessonRepository.getModelById(id);
+        return lessonRepository.getModelById(id);
     }
 
     public void updateLesson(Long id, Lesson lessonToUpdate) {

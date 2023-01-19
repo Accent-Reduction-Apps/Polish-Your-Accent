@@ -1,9 +1,11 @@
 package org.accentreductionapps.polishyouraccent.controller;
 
-import org.accentreductionapps.polishyouraccent.model.users.User;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.net.URI;
 
 @RestController
 public class RegisterController {
@@ -11,8 +13,9 @@ public class RegisterController {
     //POST - try to create user
 
     @GetMapping("/register")
-public void registerSite(){
-        //RETURN PAGE
+    public ResponseEntity<String> registerSite() {
+        //TODO RETURN PAGE
+        return ResponseEntity.created(URI.create("http://localhost:8080/register")).header("Register Page", "Some value?").body("Hello Register Page");
     }
 
     @PostMapping("/register")

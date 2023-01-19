@@ -1,9 +1,7 @@
 package org.accentreductionapps.polishyouraccent.repository;
 
-import org.accentreductionapps.polishyouraccent.controller.UserController;
-import org.accentreductionapps.polishyouraccent.mockUpUsers.MockUsers;
+import filters.mockUpUsers.MockUsers;
 import org.accentreductionapps.polishyouraccent.model.users.User;
-import org.accentreductionapps.polishyouraccent.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -29,7 +27,8 @@ class UserRepositoryTest {
         int sizeBeforeModelAdded = userRepository.getAllModels().size();
         assertEquals(0, sizeBeforeModelAdded);
 
-        Long idReturned = userRepository.addModel(user);
+//        Long idReturned = userRepository.addModel(user); //if addModel returned id, might be useful but too many changes in others code to implement now
+        userRepository.addModel(user);
 
         int sizeAfterModelAdded = userRepository.getAllModels().size();
         assertEquals(1, sizeAfterModelAdded);

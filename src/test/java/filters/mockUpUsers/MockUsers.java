@@ -1,4 +1,4 @@
-package org.accentreductionapps.polishyouraccent.mockUpUsers;
+package filters.mockUpUsers;
 
 import org.accentreductionapps.polishyouraccent.model.LessonsHistory;
 import org.accentreductionapps.polishyouraccent.model.users.Specialist;
@@ -11,10 +11,11 @@ public class MockUsers {
 
 
     public static Student getUserStudent(Long userId) {
-        return new Student(
+
+
+        Student student =new Student(
                 "dawid@gmail.com",
                 "dfd",
-                userId,
                 3,
                 "male",
                 "2 years",
@@ -22,21 +23,28 @@ public class MockUsers {
                 "yes",
                 prepareMockLessonHistoryList()
         );
+
+        student.setId(userId);
+        return student;
     }
 
 
     public static Student getInvalidUserStudent() {
-        return new Student(
+
+
+        Student student =new Student(
                 "dawid@gmail.com",
-                "",
-                1L,
+                "dfd",
                 3,
-                "",
+                "male",
                 "2 years",
                 2,
                 "yes",
                 prepareMockLessonHistoryList()
         );
+
+        student.setId(999999L);
+        return student;
     }
 
     public static List<LessonsHistory> prepareMockLessonHistoryList() {
