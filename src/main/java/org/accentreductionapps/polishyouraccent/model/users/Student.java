@@ -22,9 +22,8 @@ public class Student extends User {
     private List<LessonsHistory> listOfLessonsDone;
 
 
-    public Student(String emailAddress, String password, Long id, int age, String gender, String howLongHaveYouBeenLearningEnglish, int daysWithoutBreak, String musicInstrumentPlayed, List<LessonsHistory> listOfLessonsDone) {
+    public Student(String emailAddress, String password, int age, String gender, String howLongHaveYouBeenLearningEnglish, int daysWithoutBreak, String musicInstrumentPlayed, List<LessonsHistory> listOfLessonsDone) {
         super(emailAddress, password);
-        this.id = id;
         this.age = age;
         this.gender = gender;
         this.howLongHaveYouBeenLearningEnglish = howLongHaveYouBeenLearningEnglish;

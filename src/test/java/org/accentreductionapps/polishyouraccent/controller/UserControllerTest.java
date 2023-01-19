@@ -1,6 +1,6 @@
 package org.accentreductionapps.polishyouraccent.controller;
 
-import org.accentreductionapps.polishyouraccent.mockUpUsers.MockUsers;
+import filters.mockUpUsers.MockUsers;
 import org.accentreductionapps.polishyouraccent.model.users.Student;
 import org.accentreductionapps.polishyouraccent.model.users.User;
 import org.accentreductionapps.polishyouraccent.service.UserService;
