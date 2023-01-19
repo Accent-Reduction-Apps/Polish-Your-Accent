@@ -23,7 +23,6 @@ class LessonServiceTest {
     @Test
     public void GivenCreateLessonsRequest_WhenLessonServiceCreateLessonCalled_ThenLessonRepositoryAddModelIsCalled() {
         Lesson testLesson = lessonService.createLesson(null, null, null, null, null);
-        testLesson.setId(3L);
         verify(lessonRepository, times(1)).addModel(testLesson);
     }
 
