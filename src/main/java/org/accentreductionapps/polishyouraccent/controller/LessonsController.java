@@ -20,7 +20,7 @@ public class LessonsController {
     }
 
     @GetMapping("/lessons")
-    public List<Lesson> getRandomDog() {
+    public List<Lesson> getAllLessons() {
         return lessonsService.getAllLessons();
     }
 

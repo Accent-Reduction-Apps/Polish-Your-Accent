@@ -2,6 +2,7 @@ package org.accentreductionapps.polishyouraccent.repository;
 
 import org.accentreductionapps.polishyouraccent.model.Lesson;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,6 +11,7 @@ import java.util.Map;
 public class LessonRepository extends dbMockupMap<Lesson> implements Repository<Lesson> {
 
     private final Map<Long, Lesson> lessons = new HashMap<>();
+
 
     @Override
     public void addModel(Lesson model) {
@@ -23,7 +25,7 @@ public class LessonRepository extends dbMockupMap<Lesson> implements Repository<
 
     @Override
     public List<Lesson> getAllModels() {
-        return (List<Lesson>) lessons.values();
+        return new ArrayList<>(lessons.values());
     }
 
     @Override
