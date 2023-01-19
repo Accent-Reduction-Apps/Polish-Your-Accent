@@ -1,6 +1,6 @@
 package org.accentreductionapps.polishyouraccent.repository;
 
-import filters.mockUpUsers.LessonRepositoryMockup;
+import filters.LessonRepositoryMockup;
 import org.accentreductionapps.polishyouraccent.model.Lesson;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

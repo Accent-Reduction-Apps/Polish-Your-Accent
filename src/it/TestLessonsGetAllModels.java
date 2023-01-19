@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static filters.mockUpUsers.LessonRepositoryMockup.lessonsMockupList;
+import static filters.LessonRepositoryMockup.lessonsMockupList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestLessonsGetAllModels {

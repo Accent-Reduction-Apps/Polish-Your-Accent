@@ -1,4 +1,4 @@
-package filters.mockUpUsers;
+package filters;
 
 import org.accentreductionapps.polishyouraccent.model.Lesson;
 import org.assertj.core.util.Arrays;
