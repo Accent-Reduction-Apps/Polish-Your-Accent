@@ -14,7 +14,7 @@ public class Exercise {
 
     LocalDateTime dateTimeWhenExerciseWasCreated = null;
 
-    int testResult = 0;
+    Integer testResult = 0;
     String videoFileName;
     List<Question> listOfQuestions = null;
 
@@ -22,7 +22,7 @@ public class Exercise {
                     String exerciseTitle,
                     String exerciseText,
                     LocalDateTime dateTimeWhenExerciseWasCreated,
-                    int testResult,
+                    Integer testResult,
                     String videoFileName,
                     List<Question> listOfQuestions) {
         this.author = author;
@@ -79,11 +79,11 @@ public class Exercise {
         this.dateTimeWhenExerciseWasCreated = dateTimeWhenExerciseWasCreated;
     }
 
-    public int getTestResult() {
+    public Integer getTestResult() {
         return testResult;
     }
 
-    public void setTestResult(int testResult) {
+    public void setTestResult(Integer testResult) {
         this.testResult = testResult;
     }
 
