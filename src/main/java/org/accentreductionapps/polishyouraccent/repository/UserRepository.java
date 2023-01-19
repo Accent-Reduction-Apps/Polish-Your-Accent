@@ -3,6 +3,7 @@ package org.accentreductionapps.polishyouraccent.repository;
 
 import org.accentreductionapps.polishyouraccent.model.users.User;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,33 +11,34 @@ import java.util.Map;
 @org.springframework.stereotype.Repository
 public class UserRepository extends dbMockupMap<User> implements Repository<User> {
 
-    private final Map<Long, User> user = new HashMap<>();
+    private final Map<Long, User> users = new HashMap<>();
 
     @Override
-    public void addModel(User model) {
-        user.put(findId(user), model);
-
+    public Long addModel(User model) {
+        Long id = findId(users);
+        users.put(id, model);
+        return id;
     }
 
     @Override
     public void deleteModel(Long id) {
-        user.remove(id);
+        users.remove(id);
 
     }
 
     @Override
     public List<User> getAllModels() {
-        return (List<User>) user.values();
+        return new ArrayList<User>(users.values());
     }
 
     @Override
     public User getModelById(Long id) {
-        return user.get(id);
+        return users.get(id);
     }
 
     @Override
     public void updateModel(Long id, User model) {
-        user.put(id, model);
+        users.put(id, model);
 
     }
 }

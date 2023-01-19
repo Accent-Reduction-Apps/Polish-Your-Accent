@@ -11,7 +11,7 @@ import java.util.List;
 @Setter
 public class Student extends User {
 
-    private Long id;
+
     private int age;
     private String gender;
     private String howLongHaveYouBeenLearningEnglish;
