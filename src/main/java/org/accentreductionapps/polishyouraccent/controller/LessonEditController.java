@@ -22,8 +22,8 @@ public class LessonEditController {
     }
 
     @GetMapping(value = "/lesson/create_lesson")
-    public void createLesson() {
-        // template for creating a new lesson
+    public void getLessonForm() {
+        // form for creating a new lesson
     }
 
 

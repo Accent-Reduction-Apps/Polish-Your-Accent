@@ -23,8 +23,8 @@ public class ExerciseEditController {
     }
 
     @GetMapping(value = "/lesson/{lessonIdString}/edit_lesson/create_exercise")
-    public void createExercise() {
-        // template for creating a new exercise
+    public void getExerciseForm() {
+        // form for creating a new exercise
     }
 
     @GetMapping(value = "/lesson/{lessonIdString}/edit_lesson/{exercise_id}/edit_exercise")
