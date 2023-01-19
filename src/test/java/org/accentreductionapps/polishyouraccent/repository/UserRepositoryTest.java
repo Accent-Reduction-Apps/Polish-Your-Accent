@@ -28,6 +28,7 @@ class UserRepositoryTest {
         assertEquals(0, sizeBeforeModelAdded);
 
 //        Long idReturned = userRepository.addModel(user); //if addModel returned id, might be useful but too many changes in others code to implement now
+        userRepository.addModel(user);
 
         int sizeAfterModelAdded = userRepository.getAllModels().size();
         assertEquals(1, sizeAfterModelAdded);
