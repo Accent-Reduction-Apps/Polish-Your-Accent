@@ -1,8 +1,8 @@
 package org.accentreductionapps.polishyouraccent.repository;
 
 import org.accentreductionapps.polishyouraccent.model.Lesson;
-import org.accentreductionapps.polishyouraccent.model.exercises.Exercise;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +14,9 @@ public class LessonRepository extends dbMockupMap<Lesson> implements Repository<
 
     @Override
     public void addModel(Lesson model) {
-        lessons.put(findId(lessons), model);
+        Long id = findId(lessons);
+        lessons.put(id, model);
+
     }
 
     @Override
@@ -24,7 +26,7 @@ public class LessonRepository extends dbMockupMap<Lesson> implements Repository<
 
     @Override
     public List<Lesson> getAllModels() {
-        return (List<Lesson>) lessons.values();
+        return new ArrayList<Lesson>(lessons.values());
     }
 
     @Override

@@ -1,8 +1,5 @@
 package org.accentreductionapps.polishyouraccent.repository;
 
-import org.accentreductionapps.polishyouraccent.model.Lesson;
-import org.accentreductionapps.polishyouraccent.model.exercises.Exercise;
-
 import java.util.List;
 
 public interface Repository<T> {
