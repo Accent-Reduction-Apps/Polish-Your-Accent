@@ -12,10 +12,11 @@ public class LessonRepository extends dbMockupMap<Lesson> implements Repository<
 
     private final Map<Long, Lesson> lessons = new HashMap<>();
 
-
     @Override
     public void addModel(Lesson model) {
-        lessons.put(findId(lessons), model);
+        Long id = findId(lessons);
+        lessons.put(id, model);
+
     }
 
     @Override

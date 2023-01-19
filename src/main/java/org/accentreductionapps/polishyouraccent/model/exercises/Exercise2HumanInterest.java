@@ -1,4 +1,4 @@
-package org.accentreductionapps.polishyouraccent.model.exercises;
-
-public class Exercise2HumanInterest extends Exercises {
-}
+//package org.accentreductionapps.polishyouraccent.model.exercises;
+//
+//public class Exercise2HumanInterest extends Exercise {
+//}
