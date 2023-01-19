@@ -46,7 +46,7 @@ public class ExerciseEditController {
     }
 
     @PutMapping(value = "/lesson/{lessonIdString}/edit_lesson/{exercise_id}/edit_exercise")
-    public Exercise saveEditedExercise(Exercise exerciseEditedToSave) {
-        return exerciseService.updateExercise(exerciseEditedToSave.getId(), exerciseEditedToSave);
+    public void saveEditedExercise(Exercise exerciseEditedToSave) {
+        exerciseService.updateExercise(exerciseEditedToSave.getId(), exerciseEditedToSave);
     }
 }

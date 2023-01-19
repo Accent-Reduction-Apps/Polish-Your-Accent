@@ -3,6 +3,7 @@ package org.accentreductionapps.polishyouraccent.service;
 import org.accentreductionapps.polishyouraccent.model.Lesson;
 import org.accentreductionapps.polishyouraccent.model.exercises.Exercise;
 import org.accentreductionapps.polishyouraccent.model.users.User;
+import org.accentreductionapps.polishyouraccent.repository.LessonRepository;
 import org.accentreductionapps.polishyouraccent.repository.Repository;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ public class LessonService {
 
     private Repository lessonRepository;
 
-    public LessonService(Repository lessonRepository) {
+    public LessonService(LessonRepository lessonRepository) {
         this.lessonRepository = lessonRepository;
     }
 
@@ -32,7 +33,7 @@ public class LessonService {
         return (Lesson) lessonRepository.getModelById(id);
     }
 
-    public Lesson updateLesson(Long id, Lesson lessonToUpdate) {
-        return (Lesson) lessonRepository.updateModel(id, lessonToUpdate);
+    public void updateLesson(Long id, Lesson lessonToUpdate) {
+        lessonRepository.updateModel(id, lessonToUpdate);
     }
 }

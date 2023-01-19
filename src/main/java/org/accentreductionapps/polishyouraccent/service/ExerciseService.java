@@ -33,7 +33,7 @@ public class ExerciseService {
         return (Exercise) exerciseRepository.getModelById(id);
     }
 
-    public Exercise updateExercise(Long id, Exercise exerciseToUpdate) {
-        return (Exercise) exerciseRepository.updateModel(id, exerciseToUpdate);
+    public void updateExercise(Long id, Exercise exerciseToUpdate) {
+        exerciseRepository.updateModel(id, exerciseToUpdate);
     }
 }

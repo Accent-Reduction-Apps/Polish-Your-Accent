@@ -43,7 +43,7 @@ public class LessonEditController {
     }
 
     @PutMapping(value = "/lesson/{lessonIdString}/edit_lesson")
-    public Lesson saveEditedLesson(Lesson lessonEditedToSave) {
-        return lessonService.updateLesson(lessonEditedToSave.getId(), lessonEditedToSave);
+    public void saveEditedLesson(Lesson lessonEditedToSave) {
+        lessonService.updateLesson(lessonEditedToSave.getId(), lessonEditedToSave);
     }
 }
