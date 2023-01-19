@@ -32,7 +32,7 @@ public class LessonService {
         return (Lesson) lessonRepository.getModelById(id);
     }
 
-    public Lesson updateLesson(Long id, Lesson lessonToUpdate) {
-        return (Lesson) lessonRepository.updateModel(id, lessonToUpdate);
+    public void updateLesson(Long id, Lesson lessonToUpdate) {
+        lessonRepository.updateModel(id, lessonToUpdate);
     }
 }
