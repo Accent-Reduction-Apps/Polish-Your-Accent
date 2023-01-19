@@ -28,6 +28,4 @@ class LessonsControllerTest {
         lessonsController.getAllLessons();
         verify(lessonsService, times(1)).getAllLessons();
     }
-
-
 }

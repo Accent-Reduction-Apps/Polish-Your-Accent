@@ -1,7 +1,7 @@
 package org.accentreductionapps.polishyouraccent.repository;
 
+import filters.LessonRepositoryMockup;
 import org.accentreductionapps.polishyouraccent.model.Lesson;
-import org.assertj.core.util.Arrays;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,9 +12,9 @@ import static org.mockito.Mockito.mock;
 
 class LessonRepositoryTest {
 
-    private final List<Object> lessonsInitList =
-            Arrays.asList(new Lesson[]{mock(Lesson.class), mock(Lesson.class), mock(Lesson.class)});
+
     private LessonRepository lessonRepository;
+    private final List<Object> lessonsMockupList = LessonRepositoryMockup.lessonsMockupList;
 
     @BeforeEach
     void setUp() {
@@ -22,7 +22,7 @@ class LessonRepositoryTest {
     }
 
     void populateRepository() {
-        for (Object initLesson : lessonsInitList
+        for (Object initLesson : lessonsMockupList
         ) {
             lessonRepository.addModel((Lesson) initLesson);
         }
@@ -32,7 +32,7 @@ class LessonRepositoryTest {
     void addMultipleLessons_and_getAllModels() {
         populateRepository();
         List<Lesson> lessonsList = lessonRepository.getAllModels();
-        assertEquals(lessonsInitList, lessonsList);
+        assertEquals(lessonsMockupList, lessonsList);
     }
 
     @Test
