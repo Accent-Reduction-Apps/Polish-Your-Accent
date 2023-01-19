@@ -23,7 +23,7 @@ public class LessonEditController {
 
     @GetMapping(value = "/lesson/create_lesson")
     public void getLessonForm() {
-        // form for creating a new lesson
+        lessonService.getLessonForm();
     }
 
 

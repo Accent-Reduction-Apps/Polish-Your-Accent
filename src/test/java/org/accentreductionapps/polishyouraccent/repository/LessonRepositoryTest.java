@@ -42,4 +42,20 @@ class LessonRepositoryTest {
         assertEquals(mockLesson, lessonRepository.getModelById(0L));
     }
 
+    @Test
+    void getLessonById() {
+        Lesson mockLessonToBeAdded = mock(Lesson.class);
+        lessonRepository.addModel(mockLessonToBeAdded);
+        assertEquals(mockLessonToBeAdded, lessonRepository.getModelById(0L));
+    }
+
+    @Test
+    void updateLesson() {
+        Lesson mockLessonToBeUpdated = mock(Lesson.class);
+        Lesson mockLessonUpdateWith = mock(Lesson.class);
+        lessonRepository.updateModel(0L, mockLessonUpdateWith);
+        assertEquals(mockLessonUpdateWith, lessonRepository.getModelById(0L));
+
+    }
+
 }
