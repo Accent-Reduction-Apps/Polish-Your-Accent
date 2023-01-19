@@ -4,7 +4,6 @@ import org.accentreductionapps.polishyouraccent.model.Lesson;
 import org.accentreductionapps.polishyouraccent.model.exercises.Exercise;
 import org.accentreductionapps.polishyouraccent.model.users.User;
 import org.accentreductionapps.polishyouraccent.repository.LessonRepository;
-import org.accentreductionapps.polishyouraccent.repository.Repository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -13,10 +12,13 @@ import java.util.List;
 @Service
 public class LessonService {
 
-    private Repository lessonRepository;
+    private final LessonRepository lessonRepository;
 
     public LessonService(LessonRepository lessonRepository) {
         this.lessonRepository = lessonRepository;
+    }
+
+    public void getLessonForm() {
     }
 
     public Lesson createLesson(User author,
@@ -30,7 +32,7 @@ public class LessonService {
     }
 
     public Lesson getLessonById(Long id) {
-        return (Lesson) lessonRepository.getModelById(id);
+        return lessonRepository.getModelById(id);
     }
 
     public void updateLesson(Long id, Lesson lessonToUpdate) {
