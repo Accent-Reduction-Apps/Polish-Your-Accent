@@ -33,8 +33,8 @@ public class UserService {
         return userRepository.getModelById(id);
     }
 
-    public boolean checkIfEmailAddressIsNotUsed(String emailAddress) { //TODO TEST
-        String emailList = userRepository.getAllModels().listIterator().next().getEmailAddress();
+    public boolean checkEmailExistInDatabase(String emailAddress) { //TODO TEST
+        String emailList = userRepository.getAllModels().listIterator().next().getEmailAddress().trim().toLowerCase();
         return emailList.equals(emailAddress);
     }
 
