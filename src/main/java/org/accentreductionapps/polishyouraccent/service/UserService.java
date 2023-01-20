@@ -6,6 +6,8 @@ import org.accentreductionapps.polishyouraccent.model.users.User;
 import org.accentreductionapps.polishyouraccent.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -34,5 +36,9 @@ public class UserService {
     public boolean checkIfEmailAddressIsNotUsed(String emailAddress) { //TODO TEST
         String emailList = userRepository.getAllModels().listIterator().next().getEmailAddress();
         return emailList.equals(emailAddress);
+    }
+
+    public List<User> showAllUsers() { //TODO EDIT
+        return userRepository.getAllModels();
     }
 }
