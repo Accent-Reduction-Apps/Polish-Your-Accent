@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class RegisterController {
 
@@ -34,6 +36,11 @@ public class RegisterController {
     public ResponseEntity<User> sendRequestNewSpecialistAccountCreate(String emailAddress, String password, Integer verificationCode) {
         User newSpecialist = userService.createNewSpecialist(emailAddress, password, verificationCode);
         return ResponseEntity.ok(newSpecialist);
+    }
+
+    @GetMapping(value = "/register/all") //TODO FOR TESTS
+    public List<User> showAllRegisteredUsers() {
+        return userService.showAllUsers();
     }
 }
 
