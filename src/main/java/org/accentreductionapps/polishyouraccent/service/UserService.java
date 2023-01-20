@@ -15,9 +15,8 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public User createNewStudent(String emailAddress, String password, int age, String gender,
-                                 String howLongHaveYouBeenLearningEnglish) {
-        User newStudent = new Student(emailAddress, password, age, gender, howLongHaveYouBeenLearningEnglish, 0, "default", null);
+    public User createNewStudent(String emailAddress, String password, int age) {
+        User newStudent = new Student(emailAddress, password, age, null, null, 0, "default", null);
         userRepository.addModel(newStudent);
         return newStudent;
     }
@@ -30,5 +29,10 @@ public class UserService {
 
     public User getUser(Long id) {
         return userRepository.getModelById(id);
+    }
+
+    public boolean checkIfEmailAddressIsNotUsed(String emailAddress) { //TODO TEST
+        String emailList = userRepository.getAllModels().listIterator().next().getEmailAddress();
+        return emailList.equals(emailAddress);
     }
 }
