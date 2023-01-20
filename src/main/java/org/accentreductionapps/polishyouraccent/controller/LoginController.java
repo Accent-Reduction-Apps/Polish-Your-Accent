@@ -18,7 +18,7 @@ public class LoginController {
     //POST - send login credentials
     //POST - create an account(optional)
 
-    @GetMapping(value = "/login")
+    @GetMapping(value = {"/login", "/"})
     public ResponseEntity<String> displayLoginPage() {
         return ResponseEntity.ok("Welcome to LoginPage!");
     }
