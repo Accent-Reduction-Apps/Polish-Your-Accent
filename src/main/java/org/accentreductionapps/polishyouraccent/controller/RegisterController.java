@@ -22,7 +22,6 @@ public class RegisterController {
 
     @GetMapping("/register")
     public ResponseEntity<String> registerSite() {
-        //TODO RETURN PAGE
         return ResponseEntity.ok("Welcome to Register Page!");
     }
 
