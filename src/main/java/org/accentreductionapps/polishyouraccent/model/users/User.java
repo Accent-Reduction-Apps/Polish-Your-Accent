@@ -8,11 +8,13 @@ import lombok.Setter;
 @Setter
 
 public abstract class User {
+
+    Long id;
     @NonNull
     private final String emailAddress;
     @NonNull
     private final String password;
-    Long id;
+
 
     public User(String emailAddress, String password) {
         this.emailAddress = emailAddress;
