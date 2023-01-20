@@ -1,6 +1,5 @@
 package org.accentreductionapps.polishyouraccent.controller;
 
-import org.accentreductionapps.polishyouraccent.model.Lesson;
 import org.accentreductionapps.polishyouraccent.model.exercises.Exercise;
 import org.accentreductionapps.polishyouraccent.model.users.User;
 import org.accentreductionapps.polishyouraccent.service.ExerciseService;
@@ -24,12 +23,12 @@ public class ExerciseEditController {
 
     @GetMapping(value = "/lesson/{lessonIdString}/edit_lesson/create_exercise")
     public void getExerciseForm() {
-        // form for creating a new exercise
+        exerciseService.getExerciseForm();
     }
 
     @GetMapping(value = "/lesson/{lessonIdString}/edit_lesson/{exercise_id}/edit_exercise")
-    public Exercise getLessonToEdit(@PathVariable(value = "lessonIdString") String lessonIdString,
-                                    @PathVariable(value = "exercise_id") String exerciseIdString) {
+    public Exercise getExerciseToEdit(@PathVariable(value = "lessonIdString") String lessonIdString,
+                                      @PathVariable(value = "exercise_id") String exerciseIdString) {
         return exerciseService.getExerciseById(Long.valueOf(exerciseIdString));
     }
 
@@ -39,7 +38,7 @@ public class ExerciseEditController {
             String exerciseTitle,
             String exerciseText,
             LocalDateTime dateTimeWhenExerciseWasCreated,
-            int testResult,
+            Integer testResult,
             String videoFileName,
             List<Exercise.Question> listOfQuestions) {
         return exerciseService.createExercise(author, exerciseTitle, exerciseText, dateTimeWhenExerciseWasCreated, testResult, videoFileName, listOfQuestions);

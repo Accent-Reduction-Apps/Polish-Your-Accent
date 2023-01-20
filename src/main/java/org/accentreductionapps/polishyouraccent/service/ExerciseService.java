@@ -2,7 +2,7 @@ package org.accentreductionapps.polishyouraccent.service;
 
 import org.accentreductionapps.polishyouraccent.model.exercises.Exercise;
 import org.accentreductionapps.polishyouraccent.model.users.User;
-import org.accentreductionapps.polishyouraccent.repository.Repository;
+import org.accentreductionapps.polishyouraccent.repository.ExerciseRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -11,17 +11,20 @@ import java.util.List;
 @Service
 public class ExerciseService {
 
-    private Repository exerciseRepository;
+    private final ExerciseRepository exerciseRepository;
 
-    public ExerciseService(Repository exerciseRepository) {
+    public ExerciseService(ExerciseRepository exerciseRepository) {
         this.exerciseRepository = exerciseRepository;
+    }
+
+    public void getExerciseForm() {
     }
 
     public Exercise createExercise(User author,
                                    String exerciseTitle,
                                    String exerciseText,
                                    LocalDateTime dateTimeWhenExerciseWasCreated,
-                                   int testResult,
+                                   Integer testResult,
                                    String videoFileName,
                                    List<Exercise.Question> listOfQuestions) {
         Exercise newExercise = new Exercise(author, exerciseTitle, exerciseText, dateTimeWhenExerciseWasCreated, testResult, videoFileName, listOfQuestions);
@@ -30,7 +33,7 @@ public class ExerciseService {
     }
 
     public Exercise getExerciseById(Long id) {
-        return (Exercise) exerciseRepository.getModelById(id);
+        return exerciseRepository.getModelById(id);
     }
 
     public void updateExercise(Long id, Exercise exerciseToUpdate) {
