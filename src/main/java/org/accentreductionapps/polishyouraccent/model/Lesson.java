@@ -18,12 +18,12 @@ public class Lesson {
     @Id
     @GeneratedValue
     private Long userId;
-//    @Column(nullable = true)
+
     private String topic;
 
-//    @Column(nullable = true)
-    private String text;
     private boolean completed;  //todo decide enumerate or boolean
+
+    private String text;
 
 //@Enumerated(enumtype.string);
 //    private Status status;
