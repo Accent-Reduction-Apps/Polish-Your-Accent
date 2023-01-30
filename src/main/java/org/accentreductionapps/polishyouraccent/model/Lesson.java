@@ -18,11 +18,7 @@ public class Lesson {
     @Id
     @GeneratedValue
     private Long lessonId;
-
     private String topic;
-
-    private boolean completed;
-
     private String text;
 
 
