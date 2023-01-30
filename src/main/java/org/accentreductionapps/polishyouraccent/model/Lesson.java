@@ -4,6 +4,7 @@ import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 @Getter
@@ -12,6 +13,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "lessons")
 
 
 public class Lesson {
@@ -22,4 +24,5 @@ public class Lesson {
     private String topic;
     private String text;
     private boolean completed;
+
 }

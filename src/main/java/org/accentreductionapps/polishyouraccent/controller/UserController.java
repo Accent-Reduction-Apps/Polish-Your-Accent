@@ -1,7 +1,7 @@
 package org.accentreductionapps.polishyouraccent.controller;
 
 
-import org.accentreductionapps.polishyouraccent.model.User_Student;
+import org.accentreductionapps.polishyouraccent.model.UserStudent;
 import org.accentreductionapps.polishyouraccent.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,18 +18,29 @@ public class UserController {
     }
 
     @GetMapping
-    public List<User_Student> getAllUsers() {
+    public List<UserStudent> getAllUsers() {
         return userService.getAllUsers();
     }
 
+    @GetMapping("/{id}")
+    public UserStudent getUserById(@PathVariable("id") Long id) {
+        return userService.getUserById(id);
+    }
+
     @PostMapping()
-    public void addUser(@RequestBody User_Student userStudent) {
+    public void addUser(@RequestBody UserStudent userStudent) {
         userService.addUser(userStudent);
     }
 
-    @GetMapping("/{id}")
-    public User_Student getUserById(@PathVariable("id") Long id) {
-        return userService.getUserById(id);
+    @PutMapping("/{id}")
+    public Object addIngredientToPotion(@PathVariable("id") Long id, @RequestBody UserStudent userStudentNew){
+            UserStudent userStudentOld = userService.getUserById(id);
+            if(userStudentOld!= null){
+                userService.updateUser(userStudentOld, userStudentNew);
+                return userStudentOld;
+            }else{
+                return String.format("No user found with id %d", id);
+            }
     }
 
 

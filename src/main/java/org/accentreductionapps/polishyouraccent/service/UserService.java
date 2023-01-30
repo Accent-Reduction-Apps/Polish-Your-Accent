@@ -2,7 +2,7 @@ package org.accentreductionapps.polishyouraccent.service;
 
 
 
-import org.accentreductionapps.polishyouraccent.model.User_Student;
+import org.accentreductionapps.polishyouraccent.model.UserStudent;
 import org.accentreductionapps.polishyouraccent.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -19,17 +19,22 @@ public class UserService {
     }
 
 
-    public void addUser(User_Student userStudent) {
+    public void addUser(UserStudent userStudent) {
     userRepository.saveAndFlush(userStudent);
     }
 
-    public List<User_Student> getAllUsers() {
+    public List<UserStudent> getAllUsers() {
         return userRepository.findAll();
     }
 
-    public User_Student getUserById(Long id) {
-        Optional<User_Student> user = userRepository.findById(id);
+    public UserStudent getUserById(Long id) {
+        Optional<UserStudent> user = userRepository.findById(id);
         return user.orElse(null);
     }
 
+    public void updateUser(UserStudent userStudentOld, UserStudent userStudentNew) {
+        userStudentOld.setName(userStudentNew.getName());
+        userStudentOld.setEmailAddress(userStudentNew.getEmailAddress());
+        userStudentOld.setPassword(userStudentNew.getPassword());
+    }
 }
