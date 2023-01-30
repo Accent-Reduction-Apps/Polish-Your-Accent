@@ -1,12 +1,14 @@
 package org.accentreductionapps.polishyouraccent.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 
 @Getter
@@ -26,4 +28,8 @@ public class UserStudent {
     private String name;
     private String emailAddress;
     private String password;
+
+    @ManyToMany(cascade = CascadeType.ALL) //todo what is it?
+    @JoinTable
+    private Set<Lesson> userLessons = new HashSet<>();
 }

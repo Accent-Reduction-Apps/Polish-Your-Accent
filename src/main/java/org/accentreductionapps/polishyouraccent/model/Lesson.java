@@ -1,10 +1,7 @@
 package org.accentreductionapps.polishyouraccent.model;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Getter
@@ -21,8 +18,17 @@ public class Lesson {
     @Id
     @GeneratedValue
     private Long userId;
+//    @Column(nullable = true)
     private String topic;
+
+//    @Column(nullable = true)
     private String text;
-    private boolean completed;
+    private boolean completed;  //todo decide enumerate or boolean
+
+//@Enumerated(enumtype.string);
+//    private Status status;
+
+
+
 
 }
