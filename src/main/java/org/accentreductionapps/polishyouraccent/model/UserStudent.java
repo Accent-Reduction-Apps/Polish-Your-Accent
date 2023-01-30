@@ -1,13 +1,10 @@
 package org.accentreductionapps.polishyouraccent.model;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 
@@ -29,7 +26,7 @@ public class UserStudent {
     private String emailAddress;
     private String password;
 
-    @ManyToMany(cascade = CascadeType.ALL) //todo what is it?
+    @ManyToMany(cascade = CascadeType.ALL) //todo Dawid check this annotation
     @JoinTable
     private Set<Lesson> userLessons = new HashSet<>();
 }

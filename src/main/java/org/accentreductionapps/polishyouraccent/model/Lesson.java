@@ -17,16 +17,15 @@ public class Lesson {
 
     @Id
     @GeneratedValue
-    private Long userId;
+    private Long lessonId;
 
     private String topic;
 
-    private boolean completed;  //todo decide enumerate or boolean
+    private boolean completed;
 
     private String text;
 
-//@Enumerated(enumtype.string);
-//    private Status status;
+
 
 
 

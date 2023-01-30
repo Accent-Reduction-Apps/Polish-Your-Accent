@@ -22,8 +22,8 @@ public class LessonController {
         return lessonService.getAllLessons();
     }
 
-    @GetMapping("/{id}")
-    public Lesson getLessonById(@PathVariable("id") Long id) {
+    @GetMapping("/{lessonId}")
+    public Lesson getLessonById(@PathVariable("lessonId") Long id) {
         return lessonService.getLessonById(id);
     }
 
@@ -32,8 +32,8 @@ public class LessonController {
         lessonService.addLesson(lesson);
     }
 
-    @PutMapping("/{id}")
-    public Object addIngredientToPotion(@PathVariable("id") Long id, @RequestBody Lesson lessonNew){
+    @PutMapping("/{lessonId}")
+    public Object addIngredientToPotion(@PathVariable("lessonId") Long id, @RequestBody Lesson lessonNew){
             Lesson lessonOld = lessonService.getLessonById(id);
             if(lessonOld!= null){
                 lessonService.updateLesson(lessonOld, lessonNew);
@@ -41,6 +41,11 @@ public class LessonController {
             }else{
                 return String.format("No lesson found with id %d", id);
             }
+    }
+
+    @DeleteMapping("/{lessonID}")
+    public boolean deleteLesson(@PathVariable("lessonID") Long id){
+        return lessonService.deleteLessonById(id);
     }
 
 

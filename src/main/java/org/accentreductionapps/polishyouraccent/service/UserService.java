@@ -37,4 +37,13 @@ public class UserService {
         userStudentOld.setEmailAddress(userStudentNew.getEmailAddress());
         userStudentOld.setPassword(userStudentNew.getPassword());
     }
+
+    public boolean deleteUserById(Long id) {
+        Optional<UserStudent> user = userRepository.findById(id);
+        if(user.isPresent()){
+            userRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
 }

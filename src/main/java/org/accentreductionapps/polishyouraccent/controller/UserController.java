@@ -22,8 +22,8 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @GetMapping("/{id}")
-    public UserStudent getUserById(@PathVariable("id") Long id) {
+    @GetMapping("/{userId}")
+    public UserStudent getUserById(@PathVariable("userId") Long id) {
         return userService.getUserById(id);
     }
 
@@ -32,8 +32,8 @@ public class UserController {
         userService.addUser(userStudent);
     }
 
-    @PutMapping("/{id}")
-    public Object addIngredientToPotion(@PathVariable("id") Long id, @RequestBody UserStudent userStudentNew){
+    @PutMapping("/{userID}")
+    public Object addIngredientToPotion(@PathVariable("userID") Long id, @RequestBody UserStudent userStudentNew){
             UserStudent userStudentOld = userService.getUserById(id);
             if(userStudentOld!= null){
                 userService.updateUser(userStudentOld, userStudentNew);
@@ -43,5 +43,10 @@ public class UserController {
             }
     }
 
+
+    @DeleteMapping("/{userID}")
+    public boolean deleteUser(@PathVariable("userID") Long id){
+        return userService.deleteUserById(id);
+    }
 
 }

@@ -36,4 +36,15 @@ public class LessonService {
         lessonOld.setText(lessonNew.getText());
 //        lessonOld.setCompleted(lessonNew.isCompleted());  //todo decide enumerate or boolean
     }
+
+
+
+    public boolean deleteLessonById(Long id) {
+        Optional<Lesson> lesson = lessonRepository.findById(id);
+        if(lesson.isPresent()){
+            lessonRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
 }
