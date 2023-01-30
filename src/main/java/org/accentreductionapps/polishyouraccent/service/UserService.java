@@ -1,44 +1,35 @@
 package org.accentreductionapps.polishyouraccent.service;
 
-import org.accentreductionapps.polishyouraccent.model.users.Specialist;
-import org.accentreductionapps.polishyouraccent.model.users.Student;
-import org.accentreductionapps.polishyouraccent.model.users.User;
+
+
+import org.accentreductionapps.polishyouraccent.model.User_Student;
 import org.accentreductionapps.polishyouraccent.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
-
     private final UserRepository userRepository;
+
 
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    public User createNewStudent(String emailAddress, String password, int age) {
-        User newStudent = new Student(emailAddress, password, age, null, null, 0, "default", null);
-        userRepository.addModel(newStudent);
-        return newStudent;
+
+    public void addUser(User_Student userStudent) {
+    userRepository.saveAndFlush(userStudent);
     }
 
-    public User createNewSpecialist(String emailAddress, String password, Integer verificationCode) {
-        User newSpecialist = new Specialist(emailAddress, password, verificationCode);
-        userRepository.addModel(newSpecialist);
-        return newSpecialist;
+    public List<User_Student> getAllUsers() {
+        return userRepository.findAll();
     }
 
-    public User getUser(Long id) {
-        return userRepository.getModelById(id);
+    public User_Student getUserById(Long id) {
+        Optional<User_Student> user = userRepository.findById(id);
+        return user.orElse(null);
     }
 
-    public boolean checkEmailExistInDatabase(String emailAddress) { //TODO TEST
-        String emailList = userRepository.getAllModels().listIterator().next().getEmailAddress().trim().toLowerCase();
-        return emailList.equals(emailAddress);
-    }
-
-    public List<User> showAllUsers() { //TODO EDIT
-        return userRepository.getAllModels();
-    }
 }

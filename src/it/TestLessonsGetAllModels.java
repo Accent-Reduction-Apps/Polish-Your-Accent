@@ -1,7 +1,3 @@
-import org.accentreductionapps.polishyouraccent.controller.LessonsController;
-import org.accentreductionapps.polishyouraccent.model.Lesson;
-import org.accentreductionapps.polishyouraccent.repository.LessonRepository;
-import org.accentreductionapps.polishyouraccent.service.LessonsService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

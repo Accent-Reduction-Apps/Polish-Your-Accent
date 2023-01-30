@@ -1,4 +1,6 @@
 package org.accentreductionapps.polishyouraccent.model;
+
+
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -14,12 +16,12 @@ import javax.persistence.Id;
 @Entity
 
 
-public class Lesson {
+public class User_Student {
 
     @Id
     @GeneratedValue
     private Long userId;
-    private String topic;
-    private String text;
-    private boolean completed;
+    private String name;
+    private String emailAddress;
+    private String password;
 }
