@@ -1,0 +1,17 @@
+.Register {
+    padding: 60px 0;
+    color: blue;
+
+}
+
+.Register Form {
+    /* background-color: red; */
+    margin: 0 auto;
+    max-width: 266px;
+}
+
+.Button {
+    color: red;
+    padding: 60px;
+    margin: auto;
+}
