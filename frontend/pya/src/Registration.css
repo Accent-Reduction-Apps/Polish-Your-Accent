@@ -10,8 +10,13 @@
     max-width: 266px;
 }
 
-.Button {
+.RegistrationButton {
     color: red;
     padding: 60px;
-    margin: auto;
+    margin: 20px auto;
+
+}
+
+.Working {
+    font-size: 1rem;
 }
