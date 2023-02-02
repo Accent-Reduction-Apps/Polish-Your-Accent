@@ -1,38 +1,40 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import './Lessons.css';
 
-const Lessons = () => {
-    const [lessons, getLesson] = useState([""])
-
-    const fetchData = e => {
-        const query = e.target.value
-        fetch("http://localhost:8080/lessons")
-            .then(response => {
-                return response.json()
+function Lessons() {
+    const [lessons, setLessons] = useState([]);
+    useEffect(() => {
+        fetch("http://localhost:8080/lessons").then((result) => {
+            result.json().then((respond) => {
+                setLessons(respond)
             })
-            .then(data => {
-                getLesson(data)
-            })
-    }
+        })
+    }, [])
+    console.warn(lessons)
 
-    return (
-        <div className={"lessonList"}>
-            <button className={"fetchButton"} onClick={fetchData}>Nie klikać!!!</button>
-            {/*<input onChange={fetchData}/>*/}
-            {lessons.length > 0 && (
-                <ul>
-                    {lessons.map(lesson => (
-                        <li key={lesson.id}>
-                            {lesson.title}
-                            {lesson.text}
-                        </li>
-                    ))}
-                </ul>
-            )}
+    return (<div className={"lessonList"}>
+            <h1>Lesson list:</h1>
+            <table>
+                <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>Title</td>
+                    <td>Text</td>
+                </tr>
+                {lessons.map((item, i) =>
+                    <tr key={i}>
+                        <td>{item.lessonId}</td>
+                        <td>{item.topic}</td>
+                        <td>{item.text}</td>
+                    </tr>
+                )
+                }
+                </tbody>
+            </table>
         </div>
     )
+
+
 }
-
-
 export default Lessons
