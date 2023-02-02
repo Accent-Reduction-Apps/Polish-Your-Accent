@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 import './Registration.css';
 import RegistrationAlert from "./RegistrationAlert";
-
 
 class Registration extends Component {
     constructor(props) {
@@ -25,31 +24,6 @@ class Registration extends Component {
         this.registrationAlert.current.setMessage(message);
         this.registrationAlert.current.setVisible(true);
     }
-
-    render() {
-        return (<>
-                <div className="Register">
-
-                    <Form onSubmit={this.handleSubmit}>
-                        <Form.Group controlId="username" size="lg">
-                            <Form.Label>
-                                Username
-                            </Form.Label>
-                            <Form.Control autoFocus name="username"/>
-                        </Form.Group>
-                        <Form.Group controlId="password" size="lg">
-                            <Form.Label>
-                                Password
-                            </Form.Label>
-                            <Form.Control type="password" name="password"/>
-                        </Form.Group>
-                        <Button type="submit">Register</Button>
-                    </Form>
-                </div>
-                <RegistrationAlert ref={this.registrationAlert}/>
-            </>
-        )
-    };
 
     registerUser(username, password) {
         fetch("http://localhost:8080/users", {
@@ -75,6 +49,33 @@ class Registration extends Component {
             this.showRegistrationAlert("danger", "Error", "Something went wrong.");
         }.bind(this));
     }
+    
+    render() {
+        return (<>
+                <div className="Register">
+                    <p style={{fontSize: `0.9rem`, color: `orange`}}>   -   I'm working here!</p>
+                    <h1 className="RegisterHeader">Register</h1>
+
+                    <Form onSubmit={this.handleSubmit}>
+                        <Form.Group controlId="username" size="lg">
+                            <Form.Label>
+                                Username
+                            </Form.Label>
+                            <Form.Control autoFocus name="username"/>
+                        </Form.Group>
+                        <Form.Group controlId="password" size="lg">
+                            <Form.Label>
+                                Password
+                            </Form.Label>
+                            <Form.Control type="password" name="password"/>
+                        </Form.Group>
+                        <Button type="submit">Register</Button>
+                    </Form>
+                </div>
+                <RegistrationAlert ref={this.registrationAlert}/>
+            </>
+        )
+    };
 }
 
 export default Registration;

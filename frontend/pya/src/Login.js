@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
@@ -25,13 +25,13 @@ class Login extends Component {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                name: username,
+                username: username,
                 password: password,
             })
         }).then(function (response) {
             if (response.status === 200) {
                 this.showRegistrationAlert("success", "Login successful!", "You are now logged in.");
-                localStorage.setItem("name", username);
+                localStorage.setItem("username", username);
                 this.props.updateUsername();
             } else {
                 this.showRegistrationAlert("danger", "Wrong credentials", "Username and/or password is wrong.");
@@ -51,18 +51,18 @@ class Login extends Component {
     render() {
         return (
             <>
-                <div className="Login">
+                <div className="Login" >
                     <h1 className="LoginHeader">Login</h1>
-                    <Form onSubmit={this.handleSubmit}>
+                    <Form onSubmit={this.handleSubmit} >
 
                         <Form.Group controlId="username" size="lg">
                             <Form.Label> Username </Form.Label>
-                            <Form.Control autoFocus name="username"/>
+                            <Form.Control autoFocus name="username" />
                         </Form.Group>
 
-                        <Form.Group controlId="password" size="lg">
-                            <Form.Label> Password </Form.Label>
-                            <Form.Control type="password" name="password"/>
+                        <Form.Group controlId="password" size="lg" >
+                            <Form.Label > Password </Form.Label>
+                            <Form.Control type="password" name="password" />
                         </Form.Group>
 
                         <Button block size="lg" type="submit">
@@ -73,7 +73,7 @@ class Login extends Component {
 
                 </div>
 
-                <RegistrationAlert ref={this.registrationAlert}/>
+                <RegistrationAlert ref={this.registrationAlert} />
 
             </>
         );
