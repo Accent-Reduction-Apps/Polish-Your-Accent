@@ -1,9 +1,8 @@
 import React from "react";
+import Registration from "../Registration";
 
 export default function RegisterHere() {
     return (
-        <div>
-            <h2>a tu podepniemy rejestrację</h2>
-        </div>
+        <Registration />
     );
 }

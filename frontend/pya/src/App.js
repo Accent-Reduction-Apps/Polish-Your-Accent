@@ -11,7 +11,8 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import NoPage from "./Pages/NoPage";
 import RegisterHere from "./Pages/RegisterHere";
-import ErrorPage from "./error-page";
+import ErrorPage from "./Pages/ErrorPage";
+
 
 export default function App() {
     return (
