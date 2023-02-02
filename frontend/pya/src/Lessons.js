@@ -14,22 +14,24 @@ function Lessons() {
     console.warn(lessons)
 
     return (<div className={"lessonList"}>
-            <h1>Lesson list:</h1>
-            <table>
+            <h1>Lesson List</h1>
+            <table class="table table-stripped">
                 <tbody>
-                <tr>
-                    <td>ID</td>
-                    <td>Title</td>
-                    <td>Text</td>
-                </tr>
+                <thead className="thread">
+                <td>
+                    <th className="Id" scope="col">ID</th>
+                    <th className="Topic" scope="col">Title</th>
+                    <th className="Text" scope="col">Text</th>
+                </td>
                 {lessons.map((item, i) =>
                     <tr key={i}>
-                        <td>{item.lessonId}</td>
-                        <td>{item.topic}</td>
-                        <td>{item.text}</td>
+                        <th className="IdT">{item.lessonId}</th>
+                        <td className="TopicT">{item.topic}</td>
+                        <td className="TextT">{item.text}</td>
                     </tr>
                 )
                 }
+                </thead>
                 </tbody>
             </table>
         </div>

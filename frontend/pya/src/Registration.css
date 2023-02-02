@@ -1,12 +1,14 @@
 .Register {
     padding: 60px 0;
     color: blue;
+    margin-left: 40%;
+
 
 }
 
 .Register Form {
     /* background-color: red; */
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     max-width: 266px;
 }
 

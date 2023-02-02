@@ -1,5 +1,14 @@
 .lessonList {
     background-color: #282c34;
-    padding: 10px 0;
-    color: blue;
+    padding: 10px;
+    color: red;
+    text-align: center;
+}
+
+.table {
+
+    color: whitesmoke;
+    top: 50%;
+    margin: 0 auto;
+
 }
