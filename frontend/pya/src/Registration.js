@@ -9,7 +9,7 @@ import RegistrationAlert from "./RegistrationAlert";
 class Registration extends Component {
     constructor(props) {
         super(props);
-        this.registrationAlert = Registration.createRef();
+        this.registrationAlert = React.createRef();
     }
 
     handleSubmit = event => {
@@ -19,6 +19,12 @@ class Registration extends Component {
         this.registerUser(event.target.username.value, event.target.password.value);
     }
 
+    showRegistrationAlert(variant, heading, message) {
+        this.registrationAlert.current.setVariant(variant);
+        this.registrationAlert.current.setHeading(heading);
+        this.registrationAlert.current.setMessage(message);
+        this.registrationAlert.current.setVisible(true);
+    }
 
     render() {
         return (<>
@@ -60,12 +66,14 @@ class Registration extends Component {
         }).then(function (response) {
             if (response.status === 200) {
                 this.showRegistrationAlert("success", "User registered!", "You can now log in using your credentials.")
+            } else if (response.status === 422) {
+                this.showRegistrationAlert("danger", "User already exists", "Please choose a different name.");
             } else {
-                console.log("User not registered!")
+                this.showRegistrationAlert("danger", "User not registered!", "Something went wrong.");
             }
-        }).catch(function (error) {
-            console.log("error!")
-        })
+        }.bind(this)).catch(function (error) {
+            this.showRegistrationAlert("danger", "Error", "Something went wrong.");
+        }.bind(this));
     }
 }
 

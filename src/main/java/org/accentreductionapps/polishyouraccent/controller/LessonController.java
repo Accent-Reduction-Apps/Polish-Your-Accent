@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/lessons")
 public class LessonController {
     LessonService lessonService;
@@ -33,14 +34,14 @@ public class LessonController {
     }
 
     @PutMapping("/{lessonId}")
-    public Object addIngredientToPotion(@PathVariable("lessonId") Long id, @RequestBody Lesson lessonNew){
-            Lesson lessonOld = lessonService.getLessonById(id);
-            if(lessonOld!= null){
-                lessonService.updateLesson(lessonOld, lessonNew);
-                return lessonOld;
-            }else{
-                return String.format("No lesson found with id %d", id);
-            }
+    public Object addIngredientToPotion(@PathVariable("lessonId") Long id, @RequestBody Lesson lessonNew) { //TODO XDDDDDDDDDDDDDDD
+        Lesson lessonOld = lessonService.getLessonById(id);
+        if (lessonOld != null) {
+            lessonService.updateLesson(lessonOld, lessonNew);
+            return lessonOld;
+        } else {
+            return String.format("No lesson found with id %d", id);
+        }
     }
 
     @DeleteMapping("/{lessonID}")

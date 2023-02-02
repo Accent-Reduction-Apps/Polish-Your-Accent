@@ -1,0 +1,13 @@
+.lessonList {
+    background-color: #282c34;
+    padding: 10px 0;
+    color: blue;
+}
+
+.fetchButton {
+    background-color: #282c34;
+    color: red;
+    padding: 60px;
+    position: center;
+    margin: 300px;
+}
