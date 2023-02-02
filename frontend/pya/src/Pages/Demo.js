@@ -1,9 +1,8 @@
 import React from "react";
+import GetLessonsTable from "./GetLessons";
 
 export default function Demo() {
     return (
-        <div>
-            <h1>a tu moze byc kiedys demo lekcja bez logowania</h1>
-        </div>
+        <GetLessonsTable />
     );
 }
