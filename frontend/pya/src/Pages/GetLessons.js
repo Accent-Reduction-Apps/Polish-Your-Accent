@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import './GetLessons.css';
 
 const GetLessonsTable = () => {
@@ -12,7 +12,7 @@ const GetLessonsTable = () => {
             setError(null);
 
             try {
-                const response = await fetch('http://localhost:8080/lessons');
+                const response = await fetch('http://localhost:8080/lessons'); //todo: wydzielić komponenty/obszary - funkcja js wołająca fetch - odwoł
 
                 if (!response.ok) {
                     throw new Error(response.statusText);

@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom/client";
 import React from 'react';
 import './App.css';
-import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 import Home from "./Pages/Home";
 import Layout from "./Pages/Layout";
@@ -17,7 +17,7 @@ export default function App() {
     return (
         <Router>
             <Routes>
-
+//
                 <Route path="/" element={<Layout/>}>
                     <Route index element={<Home/>}/>
                     <Route path="about" element={<About/>}/>
