@@ -34,7 +34,7 @@ public class LessonController {
     }
 
     @PutMapping("/{lessonId}")
-    public Object addIngredientToPotion(@PathVariable("lessonId") Long id, @RequestBody Lesson lessonNew) { //TODO XDDDDDDDDDDDDDDD
+    public Object addIngredientToPotion(@PathVariable("lessonId") Long id, @RequestBody Lesson lessonNew) {
         Lesson lessonOld = lessonService.getLessonById(id);
         if (lessonOld != null) {
             lessonService.updateLesson(lessonOld, lessonNew);
